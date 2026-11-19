@@ -1,0 +1,4 @@
+hiperparametro,espaco_testado,valor_padrao,valor_escolhido
+"k (Rank, SelectKBest)","[15, 'all']",15.0,all
+C,"[0.01, 0.1, 1, 10, 100]",1.0,0.1
+class_weight,"[None, 'balanced']",,

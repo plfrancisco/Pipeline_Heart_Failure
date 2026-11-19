@@ -1,0 +1,35 @@
+{
+  "modelo_escolhido": "Regressão Logística",
+  "biblioteca_otimizacao": "scikit-learn 1.9.1 (GridSearchCV)",
+  "validacao_cruzada": "StratifiedKFold, 5 folds, shuffle, random_state=42",
+  "metrica_otimizacao": "f1",
+  "melhor_f1_cv": 0.8685,
+  "melhores_hiperparametros": {
+    "modelo__C": 0.1,
+    "modelo__class_weight": null,
+    "sel__k": "all"
+  },
+  "metricas_teste_padrao": {
+    "accuracy": 0.8967,
+    "precision": 0.9029,
+    "recall": 0.9118,
+    "f1": 0.9073,
+    "roc_auc": 0.9365
+  },
+  "metricas_teste_otimizado": {
+    "accuracy": 0.8967,
+    "precision": 0.8952,
+    "recall": 0.9216,
+    "f1": 0.9082,
+    "roc_auc": 0.9338
+  },
+  "bibliotecas": {
+    "python": "3.12.10",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "joblib": "1.6.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "modelo": "Regressão Logística",
+  "sklearn": "1.9.1",
+  "k_rank": 15,
+  "metricas_teste": {
+    "accuracy": 0.8967,
+    "precision": 0.8952,
+    "recall": 0.9216,
+    "f1": 0.9082,
+    "roc_auc": 0.9338
+  }
+}

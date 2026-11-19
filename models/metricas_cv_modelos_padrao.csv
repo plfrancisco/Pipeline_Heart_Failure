@@ -1,0 +1,4 @@
+modelo,accuracy,precision,recall,f1,roc_auc
+Regressão Logística,0.8515,0.862,0.8745,0.8674,0.9201
+Random Forest,0.8488,0.8613,0.8696,0.8642,0.9229
+KNN,0.8392,0.8509,0.8622,0.8559,0.8934

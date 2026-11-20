@@ -7,7 +7,7 @@
   "melhores_hiperparametros": {
     "modelo__C": 0.1,
     "modelo__class_weight": null,
-    "sel__k": "all"
+    "selecao_rank__k": "all"
   },
   "metricas_teste_padrao": {
     "accuracy": 0.8967,

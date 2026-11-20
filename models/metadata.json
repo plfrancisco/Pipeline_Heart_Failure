@@ -1,7 +1,7 @@
 {
   "modelo": "Regressão Logística",
   "sklearn": "1.9.1",
-  "k_rank": 15,
+  "k_rank": "all",
   "metricas_teste": {
     "accuracy": 0.8967,
     "precision": 0.8952,

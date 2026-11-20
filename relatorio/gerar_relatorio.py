@@ -18,11 +18,11 @@ NAVEGADOR = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 PASTA_FIGURAS = Path(__file__).resolve().parent / "figuras"
 
 # Dados da capa e da folha de rosto: preencher os colchetes com os dados reais do grupo.
-INSTITUICAO = "[NOME DA INSTITUIÇÃO]"
-CURSO = "Curso de TSI"
-DISCIPLINA = "[DISCIPLINA]"
-PROFESSOR = "[NOME DO PROFESSOR]"
-CIDADE = "[CIDADE]"
+INSTITUICAO = "Fatec Pompéia Shunji Nishimura"
+CURSO = "Curso de Sistemas Inteligentes"
+DISCIPLINA = "Aplicação de Ciência de Dados"
+PROFESSOR = "João Ricardo Favan"
+CIDADE = "Pompéia"
 ANO = "2026"
 AUTORES = ["Pedro Lucas Francisco", "Nathalia Rodrigues", "Pedro Henrique Cavalcante"]
 TITULO = "Pipeline de ciência de dados para predição de doença cardíaca"

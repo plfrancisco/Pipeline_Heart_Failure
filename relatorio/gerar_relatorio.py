@@ -12,8 +12,8 @@ from pathlib import Path
 
 from pypdf import PdfReader, PdfWriter
 
-PASTA_TRABALHO = Path(sys.argv[1])
-CAMINHO_SAIDA = Path(sys.argv[2])
+PASTA_TRABALHO = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(".")
+CAMINHO_SAIDA = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("relatorio_final.pdf")
 NAVEGADOR = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 PASTA_FIGURAS = Path(__file__).resolve().parent / "figuras"
 
@@ -420,4 +420,5 @@ def main():
     print(numeros)
 
 
-main()
+if __name__ == "__main__":
+    main()

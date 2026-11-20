@@ -34,7 +34,7 @@ Todas as etapas ficam em um único `Pipeline` do scikit-learn, ajustado só com 
 - **Três modelos comparados:** Regressão Logística, Random Forest e KNN, com validação cruzada estratificada de 5 partições.
 - **Otimização de hiperparâmetros** com `GridSearchCV`, comparada ao modelo padrão.
 - **API REST** sem autenticação, empacotada em Docker.
-- **Relatório** em PDF e Word, nas normas da ABNT.
+- **Relatório** em PDF, nas normas da ABNT.
 
 ## Resultados e limites do modelo
 
@@ -130,11 +130,11 @@ Os testes precisam do `pydantic` instalado normalmente. Onde isso não for poss�
 | `models/` | `modelo.joblib` e as tabelas de métricas e hiperparâmetros |
 | `api/` | API FastAPI e seus contratos de entrada e saída |
 | `tests/` | Testes da API |
-| `relatorio/` | Figuras do notebook e o relatório em PDF e Word |
+| `relatorio/` | Figuras do notebook e o relatório em PDF |
 
 ## Relatório
 
-O relatório em ABNT (capa, folha de rosto, resumo, abstract, sumário, texto e referências) está em [`relatorio/relatorio_final.pdf`](relatorio/relatorio_final.pdf), com uma versão editável em [`relatorio/relatorio_final.docx`](relatorio/relatorio_final.docx). As figuras vêm do notebook e ficam em `relatorio/figuras/`.
+O relatório em ABNT (capa, folha de rosto, resumo, abstract, sumário, texto e referências) está em [`relatorio/relatorio_final.pdf`](relatorio/relatorio_final.pdf). As figuras vêm do notebook e ficam em `relatorio/figuras/`.
 
 ## Integrantes
 

@@ -10,10 +10,10 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from api.schemas import DadosPaciente, ResultadoPredicao
 
-# O pipeline salvo referencia src.features.preparar, por isso o pacote src precisa estar importável.
 PASTA_MODELOS = Path(__file__).resolve().parent.parent / "models"
 CAMINHO_MODELO = PASTA_MODELOS / "modelo.joblib"
 CAMINHO_METADADOS = PASTA_MODELOS / "metadata.json"
+LIMIAR_DE_DECISAO = 0.5   # probabilidade mínima para classificar como doença cardíaca
 
 recursos = {}
 
@@ -21,6 +21,7 @@ recursos = {}
 @asynccontextmanager
 async def ciclo_de_vida(_app: FastAPI):
     """Carrega o modelo uma única vez na inicialização, e não a cada requisição."""
+    # O pipeline salvo referencia src.features.preparar: o pacote src precisa estar importável aqui.
     recursos["modelo"] = joblib.load(CAMINHO_MODELO)
     recursos["metadados"] = json.loads(CAMINHO_METADADOS.read_text(encoding="utf-8"))
     yield
@@ -56,7 +57,7 @@ def prever(paciente: DadosPaciente):
     except Exception as erro:  # falha inesperada do modelo vira erro 500 explícito
         raise HTTPException(status_code=500, detail=f"Falha ao executar o modelo: {erro}") from erro
 
-    possui_doenca = int(probabilidade >= 0.5)
+    possui_doenca = int(probabilidade >= LIMIAR_DE_DECISAO)
     return ResultadoPredicao(
         doenca_cardiaca=possui_doenca,
         probabilidade_doenca=round(probabilidade, 4),

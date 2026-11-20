@@ -130,18 +130,11 @@ Os testes precisam do `pydantic` instalado normalmente. Onde isso não for poss�
 | `models/` | `modelo.joblib` e as tabelas de métricas e hiperparâmetros |
 | `api/` | API FastAPI e seus contratos de entrada e saída |
 | `tests/` | Testes da API |
-| `relatorio/` | Figuras, relatório em PDF e Word, e os scripts que os geram |
+| `relatorio/` | Figuras do notebook e o relatório em PDF e Word |
 
 ## Relatório
 
-O relatório em ABNT (capa, folha de rosto, resumo, abstract, sumário, texto e referências) está em [`relatorio/relatorio_final.pdf`](relatorio/relatorio_final.pdf), com uma versão editável em [`relatorio/relatorio_final.docx`](relatorio/relatorio_final.docx). Para gerá-los de novo depois de alterar o texto ou os dados da capa:
-
-```bash
-python relatorio/gerar_relatorio.py <pasta_temporaria> relatorio/relatorio_final.pdf
-python relatorio/gerar_docx.py <pasta_temporaria> relatorio/relatorio_final.docx
-```
-
-O PDF usa o Microsoft Edge instalado. Use a mesma pasta temporária nos dois comandos.
+O relatório em ABNT (capa, folha de rosto, resumo, abstract, sumário, texto e referências) está em [`relatorio/relatorio_final.pdf`](relatorio/relatorio_final.pdf), com uma versão editável em [`relatorio/relatorio_final.docx`](relatorio/relatorio_final.docx). As figuras vêm do notebook e ficam em `relatorio/figuras/`.
 
 ## Integrantes
 

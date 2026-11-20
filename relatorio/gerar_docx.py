@@ -98,6 +98,7 @@ def numero_de_pagina_no_cabecalho(secao):
     paragrafo.paragraph_format.line_spacing = 1.0
     run = paragrafo.add_run()
     aplicar_fonte(run)
+    # Um campo do Word tem três partes: início, instrução (PAGE) e fim.
     for tipo, texto in (("begin", None), (None, " PAGE "), ("end", None)):
         if tipo:
             campo = OxmlElement("w:fldChar")
@@ -120,7 +121,7 @@ def adicionar_trechos(paragrafo, no, tamanho=12, negrito_base=False, maiusculas=
     for filho in no.children:
         if isinstance(filho, NavigableString):
             texto = re.sub(r"\s+", " ", str(filho))
-            if not texto.strip() and not texto:
+            if not texto:
                 continue
             run = paragrafo.add_run(texto.upper() if maiusculas else texto)
             aplicar_fonte(run, tamanho, negrito=negrito_base or None)
@@ -163,7 +164,7 @@ def novo_paragrafo(documento, alinhamento=None, espaco_antes=0, espaco_depois=0,
 def definir_bordas(elemento_pr, **bordas):
     """Aplica bordas (top/bottom/...) em tblPr ou tcPr; cada valor é a espessura em oitavos de ponto."""
     tag = "w:tblBorders" if elemento_pr.tag == qn("w:tblPr") else "w:tcBorders"
-    contenedor = OxmlElement(tag)
+    conjunto_de_bordas = OxmlElement(tag)
     for lado in ("top", "left", "bottom", "right", "insideH", "insideV"):
         if tag == "w:tcBorders" and lado.startswith("inside"):
             continue
@@ -173,8 +174,8 @@ def definir_bordas(elemento_pr, **bordas):
         if espessura:
             borda.set(qn("w:sz"), str(espessura))
             borda.set(qn("w:color"), "000000")
-        contenedor.append(borda)
-    elemento_pr.append(contenedor)
+        conjunto_de_bordas.append(borda)
+    elemento_pr.append(conjunto_de_bordas)
 
 
 def adicionar_tabela(documento, no_tabela):

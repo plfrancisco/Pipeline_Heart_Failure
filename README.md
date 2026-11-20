@@ -143,7 +143,3 @@ O relatório em ABNT (capa, folha de rosto, resumo, abstract, sumário, texto e 
 - Pedro Henrique Cavalcante
 
 Orientação: professor João Ricardo Favan.
-
-## Commits
-
-Em português, no formato `tipo: descrição` (`feat`, `fix`, `docs`, `refactor`, `chore`), sem marcas de ferramenta.

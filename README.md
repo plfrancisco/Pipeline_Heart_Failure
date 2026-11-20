@@ -15,7 +15,7 @@ Projeto final: pipeline automatizado de análise de dados para prever doença ca
 | `src/` | `features.py`: limpeza e engenharia de atributos, compartilhada entre treino e API |
 | `models/` | modelo exportado (`modelo.joblib`) e tabelas de métricas e hiperparâmetros |
 | `api/` | API FastAPI pública, sem autenticação |
-| `relatorio/` | figuras geradas pelo notebook e relatório em PDF |
+| `relatorio/` | figuras do notebook, relatório em PDF e em Word (ABNT) e os scripts que os geram |
 | `tests/` | testes da API |
 
 ## Resultados resumidos
@@ -29,12 +29,19 @@ python -m venv .venv
 .venv/Scripts/jupyter nbconvert --to notebook --execute --inplace notebooks/pipeline.ipynb
 ```
 
+## Relatório
+`relatorio/relatorio_final.pdf` (ABNT, 12 páginas com a capa) e `relatorio/relatorio_final.docx` são gerados por
+`relatorio/gerar_relatorio.py` e `relatorio/gerar_docx.py`. Antes de gerar de novo, preencha os dados da capa
+(instituição, disciplina, professor e cidade) no topo de `gerar_relatorio.py`. O PDF usa o Microsoft Edge.
+
 ## API
 Execução local com Docker:
 ```bash
 docker build -t heart-api .
 docker run -p 8000:8000 heart-api
 ```
+Testes automáticos: `pytest` (rodam onde o `pydantic` instala normalmente, ou dentro do container).
+
 Documentação interativa (Swagger): http://localhost:8000/docs
 
 Exemplo de predição:

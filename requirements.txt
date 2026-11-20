@@ -15,3 +15,8 @@ pydantic==2.14.4
 # Testes
 httpx==0.28.1
 pytest
+# Geração do relatório (PDF e Word)
+pypdf
+python-docx
+beautifulsoup4
+pillow

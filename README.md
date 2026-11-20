@@ -106,11 +106,16 @@ Entradas inválidas (por exemplo `Sex` diferente de `M` ou `F`) recebem erro `42
 
 ## Publicação
 
-A API ainda não está publicada. Para colocá-la no ar no Render:
+**API no ar:** <https://heart-failure-api-jred.onrender.com>, com a documentação interativa em <https://heart-failure-api-jred.onrender.com/docs>.
 
-1. Crie um **Web Service** conectado a este repositório.
-2. Escolha o ambiente **Docker**; o `Dockerfile` da raiz é detectado automaticamente.
-3. Use o plano gratuito, sem variáveis de ambiente (a porta vem de `PORT`).
+```bash
+curl -X POST https://heart-failure-api-jred.onrender.com/predict -H "Content-Type: application/json"   -d '{"Age":58,"Sex":"M","ChestPainType":"ASY","RestingBP":140,"Cholesterol":0,"FastingBS":1,"RestingECG":"Normal","MaxHR":110,"ExerciseAngina":"Y","Oldpeak":1.5,"ST_Slope":"Flat"}'
+```
+
+> [!WARNING]
+> A API é pública, sem autenticação, e roda no plano gratuito do Render: a primeira chamada depois de um tempo parada pode levar cerca de 50 segundos. Use apenas dados fictícios; o modelo não tem validade clínica.
+
+Para publicar uma cópia própria no Render, crie um **Web Service** conectado ao repositório, com o ambiente **Docker** (o `Dockerfile` da raiz é detectado automaticamente) e o plano gratuito, sem variáveis de ambiente.
 
 ## Testes
 
